@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otp</title>
+  <link rel="stylesheet" href="login.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form action="">
+      <h1>OTP has been sent!</h1>
+
+      <!-- OTP Boxes -->
+      <div class="otp">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+        <input type="text" maxlength="1">
+      </div>
+
+      <button type="submit" class="btn">Continue</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="register.html">Register Now</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Auto-focus move to next input
+    const inputs = document.querySelectorAll(".otp-boxes input");
+    inputs.forEach((input, index) => {
+      input.addEventListener("input", () => {
+        if (input.value && index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

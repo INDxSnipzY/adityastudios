@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(../../Images/background.jpg) no-repeat center
+    center fixed;
+  background-size: cover;
+} 
+
+.wrapper{
+  background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    width: 40%;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px 1px 1px 1px solid rgba(255, 255, 255, 0.3);
+  align-items: center;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.input-box input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.input-box input::placeholder{
+  color: #e0e0e0;
+  font-weight: 400;
+}
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 15px
+}
+
+.wrapper .remember-forgot{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: 12px 5px 15px;
+}
+
+.remember-forgot label input{
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forgot a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover{
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.register-link{
+  text-align: center;
+  font-size: 14.5px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  text-align: right;
+}
+
+.register-link p a {
+  color: #000000;
+  margin-left: 5px;
+}

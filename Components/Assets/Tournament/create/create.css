@@ -1,0 +1,342 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+:root{
+  --bg-color: rgba(0, 0, 0, 0.35);
+  --backdrop-filter: blur(12px);
+  --box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,body {
+    background: url(../../../Images/tback.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+nav {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav li:nth-child(9) {
+    margin-left: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    /* Start hidden off-screen */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+/* When sidebar is open */
+.sidebar.show {
+    transform: translateX(0);
+}
+
+/* Hide hamburger button on large screens */
+.menu-button{
+    display: none;
+}
+
+/* Responsive settings */
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+.head{
+    display: flex;
+}
+
+.head h2{
+    margin-right: auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+.head .btn{
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/* Main box */
+
+.create {
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: left;
+    height: 100%;
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#tournament-title, #description, #rules, #prizes, #start-date, #end-date {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.game-list {
+      display: flex;
+      gap: 15px;
+    }
+
+    .game-card {
+      position: relative;
+      width: 100px;
+      height: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .soon {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: orange;
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .selected {
+      border: 2px solid #a970ff;
+      box-shadow: 0 0 10px #a970ff;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #a970ff;
+      color: white;
+      font-size: 14px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .disabled:hover {
+      cursor: not-allowed;
+    }
+
+/* S2 */
+
+/* Disable "SOON" cards */
+    .disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none; /* fully blocks clicks */
+    }
+
+    /* Side-by-side layout for Location, Type, Max Teams */
+    .s2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .s2 h3 {
+      grid-column: span 1;
+      margin-bottom: 8px;
+    }
+
+    .s2 input,
+    .s2 select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #0f1624;
+      color: white;
+    }
+
+    .s2 input:focus,
+    .s2 select:focus {
+      outline: none;
+      border-color: #a970ff;
+      box-shadow: 0 0 5px #a970ff;
+    }
+
+/* S3 */
+.s3 {
+    margin-top: 30px;
+}
+.s3-body {
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: left;
+    height: 100%;
+}
+
+.s3 h2 {
+    margin-bottom: 10px;
+}
+
+.ttopics{
+  display: flex;
+  justify-content: space-between;
+}
+.ttopics:nth-child(1){
+  margin-left: 125px;
+}
+
+.tfiles {
+  display: flex;                  /* put them in a row */
+  justify-content: space-between;        /* center them horizontally */
+  align-items: center;            /* align vertically */
+  gap: 20px;                      /* space between file inputs */
+  margin-top: 20px;
+  
+}
+
+.custom-file-upload {
+  display: flex;
+  justify-content: center;        /* center text inside */
+  align-items: center;            /* vertical center */
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 500px;
+  height: 200px;
+}
+
+
+/* hide ugly default file input */
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.save{
+  background-color: #a970ff;
+  backdrop-filter: blur(5px);
+  width: 500px;
+  height: 50px;
+  border: var(--border);
+  border-radius: 10px;
+  margin: 40px 0px;
+  float: right;
+}

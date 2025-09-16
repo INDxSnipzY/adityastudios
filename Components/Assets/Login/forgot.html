@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot password</title>
+    <link rel="stylesheet" href="forgot.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            margin: 5px 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <form id="forgotForm">
+            <h1>Forgot Password</h1>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email">
+                <i class="bx bxs-user"></i>
+            </div>
+            <p id="emailError" class="error">Please enter a valid email</p>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me </label>
+            </div>
+
+            <button type="submit" class="btn">Request OTP</button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="register.html">Register Now</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("forgotForm");
+        const email = document.getElementById("email");
+        const emailError = document.getElementById("emailError");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // stop form refresh
+            let valid = true;
+
+            // Email validation
+            if (email.value.trim() === "" || !email.value.includes("@")) {
+                emailError.style.display = "block";
+                valid = false;
+            } else {
+                emailError.style.display = "none";
+            }
+
+            // If valid → redirect to otp.html
+            if (valid) {
+                alert("OTP has been sent to your email!");
+                window.location.href = "otp.html";
+            }
+        });
+    </script>
+</body>
+
+</html>
